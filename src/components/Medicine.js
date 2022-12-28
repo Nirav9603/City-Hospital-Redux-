@@ -17,7 +17,9 @@ function Medicine() {
   const [Edata, setEdata] = useState({})
 
   const data = useSelector((state) => state.updateMedicines)
-  const addData = useSelector((state) => state.addMedicine)
+  const addData = useSelector((state) => state.addMedicine.data)
+
+  console.log(addData);
 
   const dispatch = useDispatch();
 
@@ -34,7 +36,7 @@ function Medicine() {
   }
 
   const handleDelete = (id) => {
-    if(window.confirm("Are you sure to delete this data?")){
+    if (window.confirm("Are you sure to delete this data?")) {
       dispatch(DeleteMedicine(id))
     }
   }
@@ -44,20 +46,25 @@ function Medicine() {
     setEdata(data)
   }
 
-  return (
+  const stock = addData.length;
 
+
+  return (
+ 
     <div>
 
       <Model show={show} setShow={setShow} />
       <ModelEdit show={eshow} setShow={setEshow} data={Edata} />
-      
-      <br/>
 
-      <Button variant="primary" onClick={medicineModel}>
-        Add Medicine
-      </Button>
-
-      <br/><br/>
+      <br />
+      <div className='justify-content-center d-flex mb-3'>
+        <Button variant="primary" onClick={medicineModel}>
+          Add Medicine
+        </Button>
+      </div>
+      <div className='justify-content-center d-flex'>
+        <h3> Total Stock: {stock}</h3>
+      </div>
 
       <Table striped bordered hover>
         <thead>
@@ -79,8 +86,8 @@ function Medicine() {
                   <td>{i.quantity}</td>
                   <td>{i.price}</td>
                   <td>
-                    <IconButton aria-label="delete" color="error" onClick={()=>handleDelete(i.id)}> <DeleteIcon /></IconButton>
-                    <IconButton aria-label="edit" color="primary" onClick={()=>handleEdit(i)}> <EditIcon /></IconButton></td>
+                    <IconButton aria-label="delete" color="error" onClick={() => handleDelete(i.id)}> <DeleteIcon /></IconButton>
+                    <IconButton aria-label="edit" color="primary" onClick={() => handleEdit(i)}> <EditIcon /></IconButton></td>
                 </tr>
               )
             })

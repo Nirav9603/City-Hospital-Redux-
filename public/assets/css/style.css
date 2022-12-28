@@ -1873,3 +1873,11 @@ section {
   position: relative;
   font-weight: 500;
 }
+
+.d-flex{
+  display: block;
+}
+
+.justify-content-center{
+  justify-content: center;
+}

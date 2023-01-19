@@ -1,16 +1,4 @@
-import { ADDMEDICINE, DECREMENT, DELETEMEDICINE, EDITMEDICINE, INCREMENT } from "../Constent"
-
-export const increment = () => {
-    return{
-        type: INCREMENT
-    }
-}
-
-export const decrement = () => {
-    return{
-        type: DECREMENT
-    }
-}
+import { ADDMEDICINE, DELETEMEDICINE, EDITMEDICINE } from "../Constent"
 
 export const AddMedicine = (data) => {
     return{

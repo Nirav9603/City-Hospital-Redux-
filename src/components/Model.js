@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { AddMedicine } from '../actions/medicines.action';
 
-function Model({ show, setShow }) {
+function Model({ show, setShow  }) {
 
     const dispatch = useDispatch();
 

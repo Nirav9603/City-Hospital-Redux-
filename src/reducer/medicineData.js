@@ -21,7 +21,7 @@ export const addMedicine = (state = initState, action) => {
             if(i.id === action.payload.id){
                 i = action.payload
             }
-            return i
+            return i 
         })
         return {...state, data}
     }

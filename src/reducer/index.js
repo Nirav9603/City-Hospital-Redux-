@@ -9,4 +9,5 @@ export const rootReducer = combineReducers({
 	addMedicine,
 	doctorData,
 	CounterData
+	
 })

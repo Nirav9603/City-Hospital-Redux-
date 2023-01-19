@@ -4,7 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { AddMedicine, EditMedicine } from '../actions/medicines.action';
 
-function ModelEdit({ show, setShow, data }) {
+function ModelEdit({ show, setShow, data }) { 
+    
 
     const dispatch = useDispatch();
 

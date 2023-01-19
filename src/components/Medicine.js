@@ -15,21 +15,12 @@ function Medicine() {
   const [show, setShow] = useState(false)
   const [eshow, setEshow] = useState(false)
   const [Edata, setEdata] = useState({})
-
-  const data = useSelector((state) => state.updateMedicines)
+  
   const addData = useSelector((state) => state.addMedicine.data)
 
   console.log(addData);
 
   const dispatch = useDispatch();
-
-  const incrementData = () => {
-    dispatch(increment())
-  }
-
-  const decrementData = () => {
-    dispatch(decrement())
-  }
 
   const medicineModel = () => {
     setShow(true);
@@ -94,10 +85,6 @@ function Medicine() {
           }
         </tbody>
       </Table>
-
-      <Button variant="outline-primary" onClick={incrementData}>+</Button>
-      <span className='p-2'> {data} </span>
-      <Button variant="outline-primary" onClick={decrementData}>-</Button>
     </div >
   );
 }

@@ -12,6 +12,8 @@ import Appointment from './components/Appointment';
 import Auth from './components/Auth';
 import PrivateRoute from './roots/PrivateRoute';
 import AppointmentList from './components/AppointmentList';
+import MedicineAPI from './components/MedicineAPI';
+import Counter from './components/Counter';
 import Medicine from './components/Medicine';
 
 function App() {
@@ -28,11 +30,13 @@ function App() {
         <Route path='/appointment' element={<Appointment />} />
         <Route path='/appointment-list' element={<AppointmentList />} />
         <Route path='/auth' element={<Auth />} />
+        <Route path='/medicineapi' element={<MedicineAPI />} />
         <Route path='/medicine' element={<Medicine />} />
+        <Route path='/counter' element={<Counter />} />
       </Routes>
       <Footer />
     </>
-  );
+  )
 }
 
 export default App;

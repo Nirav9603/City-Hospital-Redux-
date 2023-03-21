@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Form, Formik, useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { GoogleLoginButton } from 'react-social-login-buttons';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, provider } from '../config';
 
 function Auth(props) {
 
@@ -38,6 +41,16 @@ function Auth(props) {
         
     }
 
+    const hendallogin = async () => {
+        try { 
+            const data = await signInWithPopup(auth, provider)
+            localStorage.setItem("Dlogin", JSON.stringify(data));
+            Naviget('/doctor')
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div>
             <section id="contact" className="contact">
@@ -51,6 +64,7 @@ function Auth(props) {
                 </div>
                 <div className="container">
                     <div className="col-12 mt-5 mt-lg-0">
+                    <GoogleLoginButton onClick={hendallogin} />
                         <Formik values={formik}>
                             <Form onSubmit={handleSubmit} className="php-email-form">
 
@@ -65,7 +79,9 @@ function Auth(props) {
                                 </div>
                                 
                                 <div className="text-center"><button type="submit">Login</button></div>
-
+                                <p className="center-padding">
+                                Don't have an account? <a href="/signup">Singup</a>
+                            </p>
                             </Form>
                         </Formik>
                     </div>

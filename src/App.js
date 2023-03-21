@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Appointment from './components/Appointment';
 import Auth from './components/Auth';
+import Signup from './components/Signup';
 import PrivateRoute from './roots/PrivateRoute';
 import AppointmentList from './components/AppointmentList';
 import MedicineAPI from './components/MedicineAPI';
@@ -30,6 +31,7 @@ function App() {
         <Route path='/appointment' element={<Appointment />} />
         <Route path='/appointment-list' element={<AppointmentList />} />
         <Route path='/auth' element={<Auth />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/medicineapi' element={<MedicineAPI />} />
         <Route path='/medicine' element={<Medicine />} />
         <Route path='/counter' element={<Counter />} />
